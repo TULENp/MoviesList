@@ -95,7 +95,7 @@ export function MovieScreen() {
 
 const styles = StyleSheet.create({
     container: {
-        padding: 5,
+        padding: 10,
         alignItems: 'center',
     },
     nameContainer: {

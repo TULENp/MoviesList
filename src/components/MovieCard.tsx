@@ -14,7 +14,7 @@ export function MovieCard({ movie }: { movie: TMovie }) {
                 <Text style={styles.date}>{movie.vote_average}</Text>
             </View>
         </View>
-    )
+    );
 }
 
 const styles = StyleSheet.create({
@@ -32,7 +32,8 @@ const styles = StyleSheet.create({
     text: {
         display: 'flex',
         flexDirection: 'row',
-        alignContent: 'space-between',
+        justifyContent: 'space-between',
+        width: '100%',
     },
     poster: {
         width: '90%',
@@ -44,12 +45,10 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight: 'bold',
         marginBottom: 4,
-        overflow: 'hidden'
+        overflow: 'hidden',
     },
     date: {
         fontSize: 14,
         color: '#888888',
     },
-})
-
-
+});
