@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Image, ScrollView } from 'react-native'
+import { View, Text, StyleSheet, Image, ScrollView, Dimensions, ActivityIndicator } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { NavigationProp, RouteProp, useNavigation, useRoute } from '@react-navigation/native'
 import { TAppNav, TMovieInfo } from '../types';
@@ -33,7 +33,10 @@ export function MovieScreen() {
         <ScrollView contentContainerStyle={styles.container}>
             {isLoading
                 ?
-                <Text>Загрузка...</Text>
+                <>
+                    <ActivityIndicator style={{ marginTop: 200 }} size="large" />
+                    <Text style={{ fontSize: 20, marginTop: 10 }}>Загрузка...</Text>
+                </>
                 :
                 (error
                     ?
@@ -97,6 +100,7 @@ const styles = StyleSheet.create({
     container: {
         padding: 10,
         alignItems: 'center',
+        width: Dimensions.get('window').width,
     },
     nameContainer: {
         display: 'flex',

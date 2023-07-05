@@ -5,8 +5,8 @@ const token = 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3ZTk4OGU5ODljMjllOTQ1NzRhO
 export const postersURL = 'https://image.tmdb.org/t/p/w185'; // url to posters directory
 
 // if success returns object with page: number, results: array of movies
-export async function GetAllMovies() {
-    return await axios.get('/discover/movie?include_adult=false&include_video=false&language=ru-RU&page=1&sort_by=popularity.desc',
+export async function GetAllMovies(sortType: string) {
+    return await axios.get(`/discover/movie?include_adult=false&include_video=false&language=ru-RU&page=1&sort_by=${sortType}&vote_average.desc`,
         {
             headers: {
                 accept: 'application/json',

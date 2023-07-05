@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     text: {
         display: 'flex',
         flexDirection: 'row',
-        justifyContent: 'space-between',
+        justifyContent: 'space-around',
         width: '100%',
     },
     poster: {

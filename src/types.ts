@@ -22,3 +22,5 @@ export type TMovieInfo = {
 }
 
 export type TMovie = Pick<TMovieInfo, 'id' | 'poster_path' | 'title' | 'release_date' | 'vote_average'>;
+
+export type TSort = { key: string, value: string };
