@@ -5,12 +5,14 @@ import { postersURL } from '../services/api'
 
 //* display movie poster, title and date
 export function MovieCard({ movie }: { movie: TMovie }) {
-    //TODO change source to uri 
     return (
         <View style={styles.card}>
             <Image style={styles.poster} source={{ uri: postersURL + movie.poster_path }} />
             <Text style={styles.title}>{movie.title}</Text>
-            <Text style={styles.date}>{movie.release_date}</Text>
+            <View style={styles.text}>
+                <Text style={styles.date}>{movie.release_date}</Text>
+                <Text style={styles.date}>{movie.vote_average}</Text>
+            </View>
         </View>
     )
 }
@@ -20,12 +22,20 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#ffffff',
         borderRadius: 8,
-        padding: 16,
+        padding: 5,
         margin: 8,
         alignItems: 'center',
+        justifyContent: 'space-between',
+        maxWidth: Dimensions.get('window').width / 2 - 16,
+        minWidth: Dimensions.get('window').width / 2 - 16,
+    },
+    text: {
+        display: 'flex',
+        flexDirection: 'row',
+        alignContent: 'space-between',
     },
     poster: {
-        width: Dimensions.get('window').width / 2 - 48,
+        width: '90%',
         height: 200,
         borderRadius: 8,
         marginBottom: 8,
@@ -34,6 +44,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight: 'bold',
         marginBottom: 4,
+        overflow: 'hidden'
     },
     date: {
         fontSize: 14,

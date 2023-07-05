@@ -17,38 +17,8 @@ export function MoviesListScreen() {
 
     useEffect(() => {
         getAllMovies();
-
     }, [])
 
-    // async function getAllMovies() {
-    //     setIsLoading(true);
-
-    //     const res: TResult = await GetAllMovies();
-    //     if (typeof res === 'string') {
-    //         setError(res.toString());
-    //     }
-    //     else {
-    //         setMoviesList(res.results)
-    //         setCurrentPage(res.page)
-    //     }
-    //     setIsLoading(false);
-    //     console.log('error:' + error, moviesList);
-    //     console.log('list:', moviesList);
-    //     console.log( res);
-    // }
-    // async function getAllMovies() {
-    //     setIsLoading(true);
-
-    //     const res: TResult<TMoviesListResult> = await GetAllMovies(); // get request result
-    //     if (res.error) {
-    //         setError(res.error);
-    //     }
-    //     else {
-    //         setMoviesList(res.result.results)
-    //         setCurrentPage(res.result.page)
-    //     }
-    //     setIsLoading(false);
-    // }
 
     async function getAllMovies() {
         setIsLoading(true);
@@ -69,14 +39,14 @@ export function MoviesListScreen() {
         <View style={styles.container}>
             {isLoading
                 ?
-                <Text>Loading...</Text>
+                <Text>Загрузка...</Text>
                 :
                 (error
                     ?
                     <>
-                        <Text>Error:</Text>
+                        <Text>Ошибка:</Text>
                         <Text>{error}</Text>
-                        <Text>Try to use VPN</Text>
+                        <Text>Попробуйте использовать ВПН</Text>
                     </>
                     :
                     (moviesList.length === 0
@@ -94,7 +64,6 @@ export function MoviesListScreen() {
                         />))
             }
         </View>
-
     )
 }
 

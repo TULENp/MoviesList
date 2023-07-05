@@ -6,7 +6,7 @@ export const postersURL = 'https://image.tmdb.org/t/p/w185'; // url to posters d
 
 // if success returns object with page: number, results: array of movies
 export async function GetAllMovies() {
-    return await axios.get('/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc',
+    return await axios.get('/discover/movie?include_adult=false&include_video=false&language=ru-RU&page=1&sort_by=popularity.desc',
         {
             headers: {
                 accept: 'application/json',
@@ -19,7 +19,7 @@ export async function GetAllMovies() {
 
 // if success returns movie object
 export async function GetMovieById(id: number) {
-    return await axios.get(`/movie/${id}?language=en-US`,
+    return await axios.get(`/movie/${id}?language=ru-RU`,
         {
             headers: {
                 accept: 'application/json',

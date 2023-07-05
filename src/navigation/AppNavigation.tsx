@@ -10,7 +10,7 @@ export function AppNavigation() {
     return (
         <NavigationContainer>
             <Stack.Navigator initialRouteName='List'>
-                <Stack.Screen name="List" component={MoviesListScreen} options={{ title: 'Movies' }} />
+                <Stack.Screen name="List" component={MoviesListScreen} options={{ title: 'Фильмы' }} />
                 <Stack.Screen name="Movie" component={MovieScreen} />
             </Stack.Navigator>
         </NavigationContainer>
