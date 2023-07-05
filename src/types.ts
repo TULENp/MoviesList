@@ -6,7 +6,10 @@ export type TAppNav = {
 
 export type TMovie = {
     id: number,
-    image: string,
+    poster_path: string,
     title: string,
-    date: string
+    genre_ids: string[]
+    release_date: string,
+    overview: string,
+    vote_average: number
 }

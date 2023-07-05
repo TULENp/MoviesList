@@ -1,15 +1,16 @@
 import { View, Text, Image, StyleSheet, Dimensions } from 'react-native'
 import React from 'react'
 import { TMovie } from '../types'
+import { postersURL } from '../services/api'
 
-//* display movie image, title and date
+//* display movie poster, title and date
 export function MovieCard({ movie }: { movie: TMovie }) {
     //TODO change source to uri 
     return (
         <View style={styles.card}>
-            <Image style={styles.image} source={require('../../assets/icon.png')} />
+            <Image style={styles.poster} source={{ uri: postersURL + movie.poster_path }} />
             <Text style={styles.title}>{movie.title}</Text>
-            <Text style={styles.date}>{movie.date}</Text>
+            <Text style={styles.date}>{movie.release_date}</Text>
         </View>
     )
 }
@@ -23,7 +24,7 @@ const styles = StyleSheet.create({
         margin: 8,
         alignItems: 'center',
     },
-    image: {
+    poster: {
         width: Dimensions.get('window').width / 2 - 48,
         height: 200,
         borderRadius: 8,
