@@ -1,4 +1,4 @@
-import { View, Text, Pressable, FlatList, StyleSheet, ActivityIndicator, Dimensions } from 'react-native'
+import { View, Text, Pressable, FlatList, StyleSheet, ActivityIndicator } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { NavigationProp, useNavigation } from '@react-navigation/native'
 import { TAppNav, TMovie, TSort } from '../types';
@@ -6,16 +6,15 @@ import { MovieCard } from '../components/MovieCard';
 import { GetAllMovies } from '../services/api';
 import { SelectList } from 'react-native-dropdown-select-list';
 
-//* Display list of movies 
+//* Display list of movies and sort
 export function MoviesListScreen() {
-    //TODO Add pagination and update
-    //TODO mb add store
     const { navigate, setOptions } = useNavigation<NavigationProp<TAppNav>>();
-
     const [error, setError] = useState<string>('');
     const [isLoading, setIsLoading] = useState<boolean>(true);
+
     const [moviesList, setMoviesList] = useState<TMovie[]>([]);
-    const [currentPage, setCurrentPage] = useState<number>(1);
+    const [currentPage, setCurrentPage] = useState<number>(1); // for pagination
+
     const sortTypes: TSort[] = [
         {
             key: 'popularity.desc',
@@ -34,7 +33,7 @@ export function MoviesListScreen() {
             value: 'Старое',
         },
     ]
-    const [sortType, setSortType] = React.useState<string>(sortTypes[0].key);
+    const [sortType, setSortType] = React.useState<string>(sortTypes[0].key); // for sort
 
     //add sort select to header
     useEffect(() => {
@@ -113,7 +112,7 @@ export function MoviesListScreen() {
                     :
                     (moviesList.length === 0
                         ?
-                        <Text>Movies list is empty</Text>
+                        <Text>Список фильмов пуст</Text>
                         :
                         <FlatList
                             data={moviesList}

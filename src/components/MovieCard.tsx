@@ -3,7 +3,7 @@ import React from 'react'
 import { TMovie } from '../types'
 import { postersURL } from '../services/api'
 
-//* display movie poster, title and date
+//* display movie poster, title, date and rating
 export function MovieCard({ movie }: { movie: TMovie }) {
     return (
         <View style={styles.card}>

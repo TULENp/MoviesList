@@ -48,7 +48,7 @@ export function MovieScreen() {
                     :
                     (!movieData
                         ?
-                        <Text>Movies list is empty</Text>
+                        <Text>Фильм не найден</Text>
                         :
                         <View style={styles.container}>
                             <Image
@@ -61,7 +61,7 @@ export function MovieScreen() {
                                     <Text style={[styles.rating, { fontSize: 16 }]}>{movieData.original_title}</Text>
                                     <Text style={styles.rating}>
                                         {movieData.vote_average.toFixed(1)} {" "}
-                                        <Text style={styles.nameText}>({movieData.vote_count} оценки)</Text>
+                                        <Text style={styles.nameText}>(оценок: {movieData.vote_count})</Text>
                                     </Text>
                                 </View>
 
