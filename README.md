@@ -42,6 +42,6 @@ npm start
 - Сортировка 
 - Просмотр информации о фильме
 
-![movesList](https://github.com/TULENp/MoviesList/assets/83094079/cc86c87e-0b72-415b-a542-47973755acf0)
+![moviesList](https://github.com/TULENp/MoviesList/assets/83094079/77c02cfb-a39b-4fc4-8cd7-910da0ab9d3d)
 
   
