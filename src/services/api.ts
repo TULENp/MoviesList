@@ -1,6 +1,6 @@
 import axios from "axios";
 axios.defaults.baseURL = 'https://api.themoviedb.org/3';
-const token = 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3ZTk4OGU5ODljMjllOTQ1NzRhOWU4ZjA1OWU2MmRjMSIsInN1YiI6IjY0YTQwM2YxMTEzODZjMDBmZmZhNDcyOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.t6MyblAlkTCfg4p2oB7_efkhtwMeoe9ET988l2CnTAc';
+const token = '';
 
 export const postersURL = 'https://image.tmdb.org/t/p/w185'; // url to posters directory
 
